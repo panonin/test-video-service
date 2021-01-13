@@ -1,1 +1,79 @@
-/* You can add global styles to this file, and also import other style files */
+@import "assets/styles/vars.styl"
+
+*
+  box-sizing: border-box
+  font-family: 'Rubik', sans-serif;
+  color $main-black
+
+html, body
+  margin: 0
+  padding: 0
+
+a
+  text-decoration none
+  color unset
+
+button
+  border none
+  outline none
+  -moz-appearance none
+  -ms-progress-appearance none
+  -webkit-appearance none
+
+.container
+  width 95%
+  margin auto
+
+  @media (min-width 1024px)
+    width 960px
+
+  @media (min-width 1200px)
+    width 1180px
+
+.main-input
+  -moz-appearance none
+  -ms-progress-appearance none
+  -webkit-appearance none
+  border none
+  border-bottom 1px solid $main-black
+  font-size 16px
+  outline none
+  padding-bottom 6px
+
+.main-button
+  color $white
+  background-color $main-red
+  padding 9px 32px 10px 32px
+  border-radius 4px
+  font-weight 500
+  font-size 16px
+  cursor pointer
+  transition background-color .3s
+
+  &:hover
+    background-color $main-red-hover
+
+  &_transparent
+    color $main-red
+    background-color $white
+
+    &:hover
+      background-color inherit
+
+
+.main-label-checkbox
+  display: flex
+  align-items center
+
+.main-checkbox
+  appearance none
+  width 16px
+  height 16px
+  border 1px solid $main-black
+  border-radius 4px
+  margin-right 8px
+  outline none
+
+  &:checked
+    background no-repeat center url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.18182 6.02273L0.795455 3.63636L0 4.43182L3.18182 7.61364L10 0.795454L9.20455 0L3.18182 6.02273Z' fill='%23E5261E'/%3E%3C/svg%3E%0A")
+

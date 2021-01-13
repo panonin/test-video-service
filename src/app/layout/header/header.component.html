@@ -1,0 +1,42 @@
+<header class="header">
+  <div class="header__inner">
+    <a class="logo" href="/">
+      <img src="../../../assets/img/logo.svg" alt="logo" class="logo__image">
+      <span class="logo__text">Видеосервис</span>
+    </a>
+    <div class="search">
+      <form class="search__form">
+        <input type="text" class="main-input search__input" placeholder="Поиск...">
+        <button class="main-button main-button_transparent">Найти</button>
+      </form>
+    </div>
+    <div class="header__login">
+      <form class="header__user" [formGroup]="form" *ngIf="loginStatus">
+        <input
+          [ngClass]="isShowInput ? 'main-input' : 'header__user-name'"
+          [type]="isShowInput ? 'text' : 'button'"
+          (click)="setInputFocus()"
+          (focusout)="setInputFocusOut()"
+          formControlName="name"
+        >
+      </form>
+      <button
+        class="main-button"
+        (click)="openModal()"
+        *ngIf="!loginStatus"
+      >Войти
+      </button>
+      <button
+        class="main-button main-button_transparent"
+        (click)="logout()"
+        *ngIf="loginStatus"
+      >Выйти
+      </button>
+    </div>
+  </div>
+  <app-login-modal
+    *ngIf="isModalVisible"
+    (click)="closeModal($event)"
+    (login)="login()"
+  ></app-login-modal>
+</header>

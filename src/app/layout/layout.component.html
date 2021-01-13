@@ -1,0 +1,11 @@
+<div class="main">
+  <div class="container">
+    <app-header></app-header>
+    <div class="main-menu">
+      <a routerLink='/films' routerLinkActive="main-menu__item_active" class="main-menu__item">Фильмы</a>
+      <a routerLink='/channels' routerLinkActive="main-menu__item_active" class="main-menu__item">Телеканалы</a>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+  <app-footer></app-footer>
+</div>
