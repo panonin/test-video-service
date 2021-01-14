@@ -40,6 +40,12 @@ button
   outline none
   padding-bottom 6px
 
+  &_invalid
+    border-color $main-red
+
+    &::placeholder
+      color $main-red
+
 .main-button
   color $white
   background-color $main-red
@@ -56,6 +62,7 @@ button
   &_transparent
     color $main-red
     background-color $white
+    padding-right 0
 
     &:hover
       background-color inherit

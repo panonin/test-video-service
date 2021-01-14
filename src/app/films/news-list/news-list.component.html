@@ -1,0 +1,12 @@
+<div class="films-category">
+  <h2 class="films-category__title">🔥 Новинки</h2>
+  <div class="films-category__grid">
+    <app-film-item
+      *ngFor="let film of films"
+      [link]="film.link"
+      [description]="film.description"
+      [image]="film.image"
+      [title]="film.name"
+    ></app-film-item>
+  </div>
+</div>

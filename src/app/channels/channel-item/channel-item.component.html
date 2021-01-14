@@ -1,0 +1,14 @@
+<div class="channels-item">
+  <div class="channels-item__left">
+    <img class="channels-item__image" [src]="image">
+  </div>
+  <div class="channels-item__right">
+    <h3 class="channels-item__name">{{name}}</h3>
+    <div class="channels-item__program">
+      <div class="channel-broadcast" [class.channel-broadcast_active]="program.isActive" *ngFor="let program of programs">
+        <span class="channel-broadcast__time">{{program.time}}</span>
+        <span class="channel-broadcast__name">{{program.name}}</span>
+      </div>
+    </div>
+  </div>
+</div>

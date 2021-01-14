@@ -2,14 +2,30 @@
   <div class="modal__overlay">
     <div class="modal__content">
       <h2 class="modal__title">Вход</h2>
-      <form class="login-form">
-        <input type="text" class="main-input login-form__input" placeholder="Логин">
-        <input type="text" class="main-input login-form__input" placeholder="Пароль">
+      <form class="login-form" [formGroup]="loginForm">
+        <input
+          type="text"
+          class="main-input login-form__input"
+          placeholder="Логин"
+          formControlName="username"
+          [class.main-input_invalid]="isControlInvalid('username')"
+        >
+        <input
+          type="password"
+          class="main-input login-form__input"
+          placeholder="Пароль"
+          formControlName="password"
+          [class.main-input_invalid]="isControlInvalid('password')"
+        >
         <label class="main-label-checkbox" for="remind">
-          <input class="main-checkbox" type="checkbox" id="remind">
+          <input class="main-checkbox" type="checkbox" id="remind" formControlName="remember">
           Запомнить
         </label>
-        <button class="main-button login-form__button" (click)="onLogin()">Войти</button>
+        <button
+          class="main-button login-form__button"
+          (click)="onLogin()"
+          [disabled]="loginForm.invalid"
+        >Войти</button>
       </form>
     </div>
   </div>

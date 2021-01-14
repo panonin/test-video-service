@@ -1,0 +1,70 @@
+@import "vars.styl"
+
+.genre
+  position relative
+  display flex
+  flex-direction column
+  align-items center
+  padding 80px 0 24px
+  box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.15)
+  border-radius: 6px
+
+  &:hover
+
+    .genre__background
+      opacity 1
+
+  &__background
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    border-radius inherit
+    opacity .8
+    transition .3s
+    z-index -1
+
+    &_comedy
+      background linear-gradient(127.83deg, #F2C94C 8.44%, #F29A4A 91.36%)
+
+    &_dramas
+      background linear-gradient(127.83deg, #F2994A 8.44%, #EB5757 91.36%)
+
+    &_fantasy
+      background linear-gradient(127.83deg, #56CCF2 8.44%, #2F80ED 91.36%)
+
+    &_horrors
+      background linear-gradient(127.83deg, #828282 8.44%, #333333 91.36%)
+
+  &__emoji
+    font-size 48px
+    margin-bottom 32px
+
+  &__title
+    color $white
+    font-size 20px
+    font-weight 400
+    margin 0
+
+.films-category
+
+  &_genres
+    margin-top 32px
+
+  &__title
+    font-size 24px
+    font-weight 500
+    margin 0
+
+  &__grid
+    display grid
+    grid-template-columns repeat(1, 1fr)
+    grid-gap 20px
+    margin-top 16px
+
+    @media (min-width 768px)
+      grid-template-columns repeat(2, 1fr)
+
+    @media (min-width 1024px)
+      grid-template-columns repeat(4, 1fr)

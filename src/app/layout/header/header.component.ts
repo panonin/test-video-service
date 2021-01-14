@@ -28,6 +28,7 @@ export class HeaderComponent implements OnInit {
 
     if (localUserName) {
       this.form.patchValue({ name: localUserName });
+      this.userName = localUserName;
     }
 
     if (localLoginStatus) {
@@ -54,15 +55,18 @@ export class HeaderComponent implements OnInit {
   setInputFocusOut(): void {
     this.isShowInput = false;
     this.userName = this.form.controls.name.value;
-    if (this.userName === '') {
-      this.form.patchValue({ name: 'Имя' });
-    }
-    localStorage.setItem('name', this.userName);
+    this.userName === '' ?
+      this.form.patchValue({ name: 'Логин' })
+      :
+      localStorage.setItem('name', this.userName);
   }
 
   login(): void {
     this.loginStatus = true;
-    this.form.patchValue({ name: 'Имя' });
+    if (!this.userName) {
+      this.form.patchValue({ name: 'Логин' });
+      localStorage.setItem('name', 'Логин');
+    }
     document.body.style.overflow = 'auto';
     this.isModalVisible = false;
     localStorage.setItem('login-status', this.loginStatus.toString());

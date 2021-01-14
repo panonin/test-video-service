@@ -3,6 +3,8 @@
 .channels
 
   &__inner
+    display grid
+    grid-gap 16px
     height 782px
     overflow-y auto
     margin-right -16px
@@ -21,52 +23,3 @@
       background-clip padding-box
       background-color $main-gray
       border-radius 12px
-
-.channels-item
-  display block
-  align-items center
-  height 250px
-  padding 15px
-  background-color $main-light-gray
-  border-radius 8px
-
-  @media (min-width 768px)
-    display flex
-    height 162px
-    padding 0
-
-  & + &
-    margin-top 16px
-
-  &__left
-    width 100%
-    margin-bottom 15px
-
-    @media (min-width 768px)
-      width 35%
-      margin 0
-
-  &__image
-    display block
-    margin auto
-
-  &__name
-    font-size 20px
-    font-weight 500
-    margin 0 0 17px
-
-.channel-broadcast
-  display flex
-  font-size 16px
-  font-weight 400
-
-  & + &
-    margin-top 12px
-
-  &_active
-
-    span
-     color $main-red
-
-  &__time
-    margin-right 16px

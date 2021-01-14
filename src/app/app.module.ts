@@ -10,6 +10,10 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { FilmsComponent } from './films/films.component';
 import { ChannelsComponent } from './channels/channels.component';
 import { LoginModalComponent } from './layout/header/login-modal/login-modal.component';
+import { NewsListComponent } from './films/news-list/news-list.component';
+import { GenresListComponent } from './films/genres-list/genres-list.component';
+import { FilmItemComponent } from './films/film-item/film-item.component';
+import { ChannelItemComponent } from './channels/channel-item/channel-item.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +23,17 @@ import { LoginModalComponent } from './layout/header/login-modal/login-modal.com
     FooterComponent,
     FilmsComponent,
     ChannelsComponent,
-    LoginModalComponent
+    LoginModalComponent,
+    NewsListComponent,
+    GenresListComponent,
+    FilmItemComponent,
+    ChannelItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
